@@ -1,30 +1,33 @@
-using System.Threading;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] float lifeTime = 2f;
+    [SerializeField] int damage = 1; // Her mermi 1 hasar verir
+    private float lifeTimer;
 
-    [SerializeField] float lifeTime;
-    float lifeTimer;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        lifeTimer = lifeTimer + Time.deltaTime;
+        lifeTimer += Time.deltaTime;
         if (lifeTimer >= lifeTime)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(this.gameObject); 
+        // Eğer çarptığı obje NPC ise hasar ver
+        if (collision.collider.CompareTag("NPC"))
+        {
+            NPCHealth npcHealth = collision.collider.GetComponent<NPCHealth>();
+            if (npcHealth != null)
+            {
+                npcHealth.TakeDamage(damage);
+            }
+        }
+
+        // Çarptığında mermiyi yok et
+        Destroy(gameObject);
     }
 }
