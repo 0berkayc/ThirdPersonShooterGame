@@ -20,7 +20,8 @@ public class MovementState : MonoBehaviour
 
     [HideInInspector] public Vector3 moveDirection;
     [HideInInspector] public float hzInput, vtInput;
-    [HideInInspector] public CharacterController controller;
+    //[HideInInspector] public CharacterController controller;
+    public CharacterController controller; //sonradan eklendi olmazsa silicennek
     [SerializeField] float groundYOffset;
     [SerializeField] LayerMask groundLayer;
     Vector3 spherePos;
