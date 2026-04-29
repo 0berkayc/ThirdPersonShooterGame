@@ -1,13 +1,13 @@
 # ThirdPersonShooterGame
 
-#PROJE HAKKINDA
+## PROJE HAKKINDA
 - Bu proje Yazılım Geliştirme Laboratuvarı kapsamında ödev olarak yapılmıştır.
 - Third Person Shooter şeklindeki oyunların temeli ve mantığını öğrenmek hedeflenmiştir.
   
-#OYUN SENARYOSU
+## OYUN SENARYOSU
 - Bir asker olduğumuz bu oyunda amaç rehineyi kurtarmaktır. Rehine canavarlarla dolu bir alanda tutsak haldedir. Bu kısım oyunun sadece bir levelidir.
 
-#SİSTEM AKIŞI AÇIKLAMASI
+## SİSTEM AKIŞI AÇIKLAMASI
   1. ANA MENÜ
       - Oyuncu “Play” tuşuna bastığında oyun sahnesi yüklenir (SceneManager.LoadScene("GameScene")).
       - “Exit” tuşuna basarsa Application.Quit() ile oyun kapanır.
@@ -23,7 +23,7 @@
       - “Exit” butonuna basılırsa oyun kapanır.
 
 
-# MEAKANİKLERİN BLOK DİYAGRAMI
+## MEAKANİKLERİN BLOK DİYAGRAMI
     ANA MENÜ       
   [Play]   [Exit]    
 
@@ -60,7 +60,7 @@
         └──► Exit → Oyunu kapat
 
 
-#OYUN MEKANİKLERİ
+## OYUN MEKANİKLERİ
   1. NPC HAREKETLERİ
       - Idle, Patrol, Chase, Attack mekaniklerine sahiptir.
       - NavMeshAgent kullanarak belirlenen waypointler arasında devriye gezmektedirler.
@@ -83,15 +83,15 @@
       - Tebrik mesajı içerir.
       - Tekrar oyna ve çıkış butonları bulunur.
 
-#LİTERATÜR TARAMASI VE ÖRNEK ÇALIŞMALAR
+## LİTERATÜR TARAMASI VE ÖRNEK ÇALIŞMALAR
   - Oyunu tasarlarken youtube üzerinden birçok TPS oyun tutorialları taranmıştır.
   - Mekaniklerin kodlanmasında bu kaynaklardan yardım alınmış fakat birebir kodlar kullanılmamıştır.
 
-#KULLANILAN YAZILIM MİMARİLERİ
+## KULLANILAN YAZILIM MİMARİLERİ
 - Proje Unity, Visual Studio, Visual Studio Code kullanılarak yapılmıştır.
 - C# dili ve Unity kütüphaneleri proje genelinde kullanılmıştır.
 
-#KARŞILAŞILAN ZORLUKLAR
+## KARŞILAŞILAN ZORLUKLAR
 - NPC' ler önce kapsül olarak tasarlanmış ve kodlanmış daha sonra karakterler eklenmiştir. Bu sebeple karakter ve animasyon eklemede zorlanılmıştır.
 - Nişan alma ve ateş etme mekaniklerinde zorlanılmıştır.
 - Youtube, Reddit gibi sitelerde araştırmalar yapılarak çözüm yolları bulunmuştur.
