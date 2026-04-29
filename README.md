@@ -93,7 +93,7 @@ flowchart TD
       - NPC görüşüne girdiğimizde Chase State triggerlanır.
       - Tutsakın yanına gittiğimizde kurtarma scripti triggerlanır ve oyun sonu ekranı gelir.
   ---
-  #T# ASARLANAN SAHNELER
+  ## ASARLANAN SAHNELER
   1. ANA MENÜ SAHNESİ
       - Oyunu başlatma ve çıkış tuşları bulunmakta
   2. OYUN SAHNESİ
@@ -117,7 +117,7 @@ flowchart TD
 - Nişan alma ve ateş etme mekaniklerinde zorlanılmıştır.
 - Youtube, Reddit gibi sitelerde araştırmalar yapılarak çözüm yolları bulunmuştur.
 
-#PROJEDEN KAZANIMLAR
+## PROJEDEN KAZANIMLAR
 - Unity arayüzü ve kütüphaneleri öğrenilmiş, unity deneyimi kazanılmıştır.
 - NPC mekanikleri State Machine nasıl çalışır genel yapısı nedir öğrenilmiştir.
 - Animator kullanımı öğrenilmiştir.
