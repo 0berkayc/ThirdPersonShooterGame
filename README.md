@@ -1,65 +1,86 @@
 # ThirdPersonShooterGame
+<div align="center">
 
-## PROJE HAKKINDA
-- Bu proje Yazılım Geliştirme Laboratuvarı kapsamında ödev olarak yapılmıştır.
-- Third Person Shooter şeklindeki oyunların temeli ve mantığını öğrenmek hedeflenmiştir.
-  
-## OYUN SENARYOSU
-- Bir asker olduğumuz bu oyunda amaç rehineyi kurtarmaktır. Rehine canavarlarla dolu bir alanda tutsak haldedir. Bu kısım oyunun sadece bir levelidir.
+![Unity](https://img.shields.io/badge/UNITY-GAME_ENGINE-111111?style=for-the-badge&logo=unity&logoColor=white&labelColor=000000)
+![CSharp](https://img.shields.io/badge/C%23-GAME_LOGIC-7B2CBF?style=for-the-badge&logo=csharp&logoColor=white&labelColor=3C096C)
+![TPS](https://img.shields.io/badge/THIRD_PERSON-SHOOTER-E63946?style=for-the-badge&logo=target&logoColor=white&labelColor=780000)
+![AI](https://img.shields.io/badge/NPC-ENEMY_AI-F77F00?style=for-the-badge&logo=ghost&logoColor=white&labelColor=9D4EDD)
 
-## SİSTEM AKIŞI AÇIKLAMASI
-  1. ANA MENÜ
-      - Oyuncu “Play” tuşuna bastığında oyun sahnesi yüklenir (SceneManager.LoadScene("GameScene")).
-      - “Exit” tuşuna basarsa Application.Quit() ile oyun kapanır.
-  2. OYUN SAHNELERİ
-      - Oyuncu karakteri serbestçe hareket eder (WASD + Mouse).
-      - Oyuncunun elinde bir silah vardır, ateş etme mekanikleri çalışır.
-      - NPC’ler oyuncuya saldırır.
-      - Oyuncu rehinenin kafesine geldiğinde sistem OnTriggerEnter() ile algılar.
-      - Oyuncu kafese yaklaştığında ekranda “Press E to Rescue” yazısı çıkar.
-      - Oyuncu E tuşuna bastığında kazanma olayı tetiklenir:
-  3. KAZANMA EKRANI
-      - “Tekrar Oyna” butonuna basılırsa oyun sıfırlanır.
-      - “Exit” butonuna basılırsa oyun kapanır.
+![Scene](https://img.shields.io/badge/SCENE-MANAGEMENT-457B9D?style=for-the-badge&logo=unity&logoColor=white&labelColor=1D3557)
+![Combat](https://img.shields.io/badge/COMBAT-SHOOTING_SYSTEM-D62828?style=for-the-badge&logo=crosshair&logoColor=white&labelColor=6A040F)
+![Mission](https://img.shields.io/badge/MISSION-REHINE_KURTARMA-2A9D8F?style=for-the-badge&logo=flag&logoColor=white&labelColor=264653)
 
+</div>
 
-## MEAKANİKLERİN BLOK DİYAGRAMI
-    ANA MENÜ       
-  [Play]   [Exit]    
+---
+##  Proje Hakkında
 
-        │
-        │ Play'e basılırsa
-        ▼
+Bu proje, **Yazılım Geliştirme Laboratuvarı** dersi kapsamında geliştirilmiş bir **Third Person Shooter (TPS)** oyunudur.
 
-      OYUN SAHNESİ      
-                        
-  - Oyuncu hareket eder  
-  - NPC'lerle savaşır    
-  - Silah ile ateş eder  
-  - Can sistemi çalışır  
-  - Düşmanlar ölür       
+Projenin amacı, üçüncü şahıs bakış açısına sahip oyunların temel mekaniklerini öğrenmek ve uygulamaktır. Oyunda karakter kontrolü, ateş etme sistemi, düşman yapay zekası ve görev tabanlı ilerleme bulunmaktadır.
 
-        │
-        │ Oyuncu kafese ulaşır
-        ▼
+---
+##  Oyun Senaryosu
 
-    KAFESE YAKLAŞILIR    
-  "E" tuşuna basılır     
-  → Kurtarma olayı olur  
-        │
-        │
-        ▼
+Oyuncu, düşmanlarla dolu bir bölgede bulunan bir askeri kontrol eder.
 
-    KAZANMA EKRANI       
-  "Tebrikler, Kazandın!" 
-  [Tekrar Oyna] [Exit]   
+Amaç:
+- Düşmanları etkisiz hale getirmek
+- Haritada ilerlemek
+- Rehineyi kurtarmak
 
-        │
-        ├──► Tekrar Oyna → Oyun sahnesini yeniden başlat
-        │
-        └──► Exit → Oyunu kapat
+Bu proje tek sahneden oluşan oynanabilir bir oyun prototipidir.
 
+---
+##  Oyun Akışı
 
+```text
+ANA MENÜ
+   |
+   | Oyuna Başla
+   v
+OYUN SAHNESİ
+   |
+   | Oyuncu düşmanlarla savaşır ve rehineye ulaşır
+   v
+REHİNE KURTARMA
+   |
+   | E tuşuna basılır
+   v
+KAZANMA EKRANI
+   |
+   | Tekrar oyna / çık
+````
+---
+## Oyun Mantığı
+
+- Oyuncu oyuna ana menüden başlar.
+- "Oyuna Başla" butonuna basıldığında oyun sahnesi yüklenir.
+- Oyuncu WASD tuşları ile hareket eder ve mouse ile kamerayı kontrol eder.
+- Sol tık ile düşmanlara ateş edilir.
+- Düşman NPC'ler oyuncuya saldırır.
+- Oyuncunun canı azalır ve sıfıra düşerse oyun başarısız olur.
+- Oyuncu haritada ilerleyerek rehineye ulaşır.
+- Rehineye yaklaşıldığında ekranda etkileşim mesajı çıkar.
+- "E" tuşuna basıldığında rehine kurtarılır.
+- Rehine kurtarıldıktan sonra oyun kazanma ekranına geçer.
+---
+## Mekaniklerin Blok Diyagramı
+```mermaid
+flowchart TD
+    A["ANA MENÜ<br>Play / Exit"]
+    B["OYUN SAHNESİ<br>Oyuncu hareket eder<br>NPC'lerle savaşır<br>Ateş etme<br>Can sistemi<br>Düşmanlar ölür"]
+    C["KAFESE YAKLAŞMA<br>E tuşuna basılır<br>Kurtarma gerçekleşir"]
+    D["KAZANMA EKRANI<br>Tebrikler!<br>Replay / Exit"]
+    E["OYUN KAPANIR"]
+
+    A -->|Play| B
+    B -->|Oyuncu kafese ulaşır| C
+    C --> D
+    D -->|Replay| B
+    D -->|Exit| E
+```
+---
 ## OYUN MEKANİKLERİ
   1. NPC HAREKETLERİ
       - Idle, Patrol, Chase, Attack mekaniklerine sahiptir.
@@ -71,8 +92,8 @@
   3. TRIGGER ALANLARI
       - NPC görüşüne girdiğimizde Chase State triggerlanır.
       - Tutsakın yanına gittiğimizde kurtarma scripti triggerlanır ve oyun sonu ekranı gelir.
-  
-  #TASARLANAN SAHNELER
+  ---
+  #T# ASARLANAN SAHNELER
   1. ANA MENÜ SAHNESİ
       - Oyunu başlatma ve çıkış tuşları bulunmakta
   2. OYUN SAHNESİ
